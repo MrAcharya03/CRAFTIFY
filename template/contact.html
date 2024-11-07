@@ -1,0 +1,110 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Contact{% endblock title %} 
+
+
+{% block main-content %}
+
+
+
+<body background colour = "white">
+    <div class="container mt-3">
+        <div style="text-align:center">
+
+          <!-- This is for heading -->
+          <h1><b style="font-size:30px">Contact Us</b></h1>
+
+          <!--this is paragraph-->
+          <p fs-5 text-center><center><b style="font-size:25px">We are a family of crafters. We are keeping the makers alive, saving antiquities & creating new ones. We are your source for all your DIY needs, making it easy to craft without measurements, tools or fuss.
+            We take a lot of pride in our ability to make our customers’ projects come to life.</b></center></p>
+        </div>
+        <div class="row">
+          <div class="column">
+          <img src={% static "images/contact.png" %} style="width: 100%">      
+          </div>
+          
+          <!--Taking input from user -->
+          <div class="column">
+            
+              <form>
+              <label for="fname">First Name</label>
+              <input type="text" id="fname" name="firstname" placeholder="Enter your first name..">
+              <label for="lname">Last Name</label>
+              <input type="text" id="lname" name="lastname" placeholder="Enter your last name..">
+              <label for="Email">Email</label>
+              <input type="text" id="Email" name="Email" placeholder="Enter your Email id..">
+              <label for="phone">Enter your phone number:</label>
+              <input type="tel" id="phone" name="phone"  placeholder="Enter a valid phone number">
+              <br>
+              <label for="subject">Messages</label>
+              <textarea id="subject" name="subject" placeholder="Write something here.." style="height:160px"></textarea>
+              <input type="submit" value="Submit">
+            </form>
+            
+          </div>
+        </div>
+      </div>
+</body>
+</html>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #c46e0c;
+  margin-top: 5px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+  
+input[type=submit]  {
+  background-color: #b5770c;
+  color: white;
+  padding: 12px 20px;
+  border:#41be8e;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #418abe;
+  transition-delay: 0s 1s;
+  /* color :rgb(22, 175, 12) */
+}
+
+/* Style the container/contact section */
+.container {
+  border-radius: 5px;
+  
+  padding: 10px;
+
+}
+column :hover{
+      transition-delay: 0s 1s;
+      color: #1b0a8a;
+      
+   }
+
+
+/* Create two columns that float next to eachother */
+.column {
+  float: left;
+  width: 50%;
+  margin-top: 6px;
+  padding: 20px;
+  
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+<br><br>
+{% endblock main-content %}

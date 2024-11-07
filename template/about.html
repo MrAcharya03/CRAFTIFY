@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}About{% endblock title %} 
+
+
+{% block main-content %}
+        <div class="container mt-3">
+            <br>
+            <h2 class="text-center">About Us</h2>
+            <br>
+            <div class="row container">
+                <p class="fs-5 text-center">Welcome to Craftify, your ultimate destination for exquisite handmade crafts! We are passionate artisans dedicated to preserving traditional craftsmanship while infusing modern creativity into every piece we create.
+
+                    India is the only country in the world with a unbroken, living vibrant tradition of crafts. While agriculture employs the largest number of people in India, the crafts sector is next and sustains over 20 million practitioners. The wide geographic spread embraces all of India and covers a huge gamut of widely differing work structure and cultures. Crafts communities, using similar materials that range from clay to precious metals, work with widely differing techniques and technologies to create a rich variety of forms.
+                    
+                    At Craftify, we believe in the beauty of handmade items, each telling a unique story and carrying the soulful touch of its creator. Our diverse collection features a range of handmade crafts including handwoven textiles, intricately designed pottery, meticulously crafted jewelry, and much more.
+                    
+                    Our journey began with a vision to celebrate the artistry of skilled craftsmen and women from around the world. Through our platform, we aim to showcase their talent, promote sustainable practices, and offer you an opportunity to own one-of-a-kind treasures that reflect your individual style.
+                    
+                    Whether you're searching for a special gift or adding a touch of artisanal charm to your home, Craftify is your go-to destination for exceptional handmade crafts that inspire and delight.
+                    
+                    Join us in celebrating the art of craftsmanship and discover the magic of handmade creations at Craftify!
+                </p>
+            </div>
+            <div class = "row col-xs-2">
+                <img src="{% static "images\jewellery.png" %}" style="width: 33.1%">   
+               
+                <img src="{% static "images\Pottary.jpg" %}" style="width: 33.2%"> 
+                <img src="{% static "images\arts.jpg" %}" style="width: 33.1%"> 
+              </div>
+            <br><br> 
+        </div>
+{% endblock main-content %}

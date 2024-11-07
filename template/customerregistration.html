@@ -1,0 +1,157 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %}Customer Registration{% endblock title %} 
+
+
+
+
+{% block main-content %}
+
+<style>
+    *{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif
+}
+body  {
+right: 200px;
+width: 100%;
+height: 100vh;
+justify-content: right;
+align-items: right;
+
+}
+.container  {
+   
+width: 700px;
+max-width: 700px;
+padding: 25px;
+margin-top: 25px;
+margin-left: 27%;
+
+background-color: rgba(255, 255, 255, 0.1);
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) ;
+backdrop-filter: blur(5px);
+border-radius: 9px; 
+
+}
+h1{
+text-align: center;
+}
+.row  {
+
+width: 100%;
+margin: 20px 0px;
+}
+.col {
+width: 50%;
+}
+.col1 {
+margin-right: 10px;
+}
+.col2  {
+margin-left: 10px;
+}
+input[type="text"] {
+width: 100%;
+height: 35px;
+padding: 0px 10px;
+border-radius: 9px;
+border: 1px solid;
+background: transparent;
+transition: all 1s ease;
+}
+input[type="password"] {
+width: 100%;
+height: 35px;
+padding: 0px 10px;
+border-radius: 9px;
+border: 1px solid;
+background: transparent;
+transition: all 1s ease;
+}
+input[type="submit"] {
+width: 200px;
+height: 40px;
+border-radius: 9px;
+border: none;
+outline: none;
+background: linear-gradient(to left,#40bbf0,#3fbbf4);
+font-size: 16px;
+transition: all;
+}
+input[type="submit"]:hover {
+background: linear-gradient(to left, #3f91f4,#6640f0);
+}
+p{
+text-align: center;
+
+} 
+    </style>
+ 
+
+
+ <div class="container">
+     <h1>Registration</h1>
+      <form action="{% url "customer-registration" %}" method = "post">
+        <hr>
+        {% csrf_token %}
+         <div class="row">
+            
+             <div class="col col1">
+                 <label for="fname">Frist Name</label><br>
+                 <input type="text" placeholder="First Name" name= "Fname" id="fname" required>
+             </div>
+             <div class="col col2">
+                 <label for="lname">Last Name</label><br>
+                 <input type="text" placeholder="Last Name" name= "Lname" id="lname" required>
+             </div>
+         </div>
+         <div class="row">
+            <div class="col col1">
+               <label for="email">Email</label><br>
+               <input type="text" placeholder="Email" name= "email" id="email" required>
+            </div>
+           <div class="col col2">
+               <label for="phone">Username</label><br>
+               <input type="text" placeholder="Create a username" name= "Uname" id="phone" required>
+           </div>
+         </div> 
+         <div class="row">
+             <div class="col col1">
+                <label for="password">Password</label><br>
+                <input type="password" placeholder="Password" name="password1" id="password" required>
+             </div>
+            <div class="col col2">
+                <label for="password">Conform Password</label><br>
+                <input type="password" placeholder="Conform Password" name="password2" id="password" required>
+            </div>
+          </div>
+          
+          <label for="trems-radio">
+             <input type="radio" id="trems-radio" name="terms" required>
+             i agree to the <a href="#"> Terms and Conditions</a>
+          </label><br><br>
+          <input type="submit" value="Submit "><br> <br>
+          {% if messages %}
+          {% for message in messages  %}
+          {% if message.tags == 'error'%}
+          <div class="alert alert-danger" role="alert">
+            {{message}}
+          </div>
+          {% else %}
+          <div class="alert alert-success" role="alert">
+            {{message}}
+          </div>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+         
+          <div class="text-center text-primary fw-bold">
+            <small>Existing User ? <a href="{% url "customer-login" %}" class="text-danger">Login Now</a></small>
+        </div>
+
+      </form>
+ </div>
+{% endblock main-content %}
